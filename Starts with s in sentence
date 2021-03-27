@@ -1,0 +1,25 @@
+def fun():
+    str=input()
+    res=[]
+    for word in str.split():
+        if word[0].lower()=='s':
+            res+=word + ' '
+    return ''.join(res)
+print(fun())
+*********************************************************
+def fun():
+    str=input()
+    res=''
+    for word in str.split():
+        if word[0].lower()=='s':
+            res+=word + ' '
+    return res
+print(fun())
+
+
+
+
+I/P: Print the words that starts with s in the sentence
+O/p: Start
+     S
+     Sentnce
