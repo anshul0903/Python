@@ -1,0 +1,52 @@
+When different arguments are passed through and then comapring starting letter of each string
+def arg(str1,str2,str3):
+    if str1[0]==str2[0]==str3[0]:
+        return True
+    else:
+        return False
+
+name=[]
+for i in range(0,3):
+    x=input()
+    name.append(x)
+    
+if(arg(name[0],name[1],name[2])==True):
+    print("The starting letter of all strings are equal")
+else:
+    print('Nope')
+*************************************************************************
+    def arg(name):
+    if name[0][0]==name[1][0]==name[2][0]:
+        return True
+    else:
+        return False
+
+name=[]
+for i in range(0,3):
+    x=input()
+    name.append(x)
+     
+if(arg(name)==True):
+    print("The starting letter of all strings are equal")
+else:
+    print('Nope')
+    
+    
+ ############################################################################################################################################   
+    When argument is passed as single string but with space (as Anshul Mishra) to check wether the string has same starting letter.
+    
+    def arg(name):
+    str=name.split()
+    
+    if str[0][0].lower()==str[1][0].lower():
+        return True
+    else:
+        return False
+
+
+name=input()
+     
+if(arg(name)==True):
+    print("The starting letter of all strings are equal")
+else:
+    print('Nope')
