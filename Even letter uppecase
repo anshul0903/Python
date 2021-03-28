@@ -1,0 +1,31 @@
+Using Strings
+
+def fun(st):
+    str=''
+    for i in range(len(st)):
+        if (i+1)%2==0:
+            str+=st[i].upper()
+        else:
+            str+=st[i].lower()
+    return str
+
+name=input()
+print(fun(name))
+************************************************************
+Using List
+
+def fun(st):
+    arr=[]
+    for i in range(len(st)):
+        if (i+1)%2==0:
+            arr.append(st[i].upper())
+        else:
+            arr.append(st[i].lower())
+    return ''.join(arr)
+
+name=input()
+print(fun(name))
+
+I/p & O/p
+anshul
+aNsHuL
