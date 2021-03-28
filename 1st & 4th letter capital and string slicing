@@ -1,0 +1,15 @@
+First and 4th letter of string to be in capital
+
+def func(name):
+    first=name[:3]    #takes frorm starting to 3 and doesnt include index 3
+    last=name[3:]     #includes 3 till end
+    res=first.capitalize()+last.capitalize()
+    return res
+
+name=input()
+print(func(name))
+*******************************************************************
+
+Similarly [1:10:2]-- skip every 2 numbers from 1 to 10
+[::]-- all
+[::-1]--reverses
