@@ -1,0 +1,24 @@
+Largest Number in a list
+
+def fun(arr):
+    max=0
+    for i in arr:
+        if max<i:
+            max=i
+    return max
+    
+arr=[5,9,5,3,7]
+print(fun(arr))
+
+Efficient way:
+
+def fun(arr):
+    max=arr[0]
+    for i in arr:
+        if max<i:
+            max=i
+    return max
+    
+arr=[5,9,5,3,7]
+print(fun(arr))
+
