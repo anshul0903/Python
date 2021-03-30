@@ -1,0 +1,27 @@
+print:
+******
+**
+******
+**
+**
+
+def fun(arr):
+    res=[]
+    for i in arr:
+        res.append('x'*i)
+    return '\n'.join(res)
+    
+arr=[5,2,5,2,2]
+print(fun(arr))
+**************************************************************
+
+def fun(arr):
+    for i in arr:
+        output=''
+        for j in range(i):
+            output+='x'
+        print(output)
+    return True
+    
+arr=[5,2,5,2,2]
+fun(arr)
