@@ -1,0 +1,48 @@
+My way:
+def func(arr):
+    status=True
+    res=0
+    resf=0
+    for i in arr:
+        if i==6 and status==True:
+            status=False
+            resf+=i
+            continue
+        if status==True:
+            res+=i
+        if i==9 and status==False:
+            status=True
+        if status==False:
+            resf+=i
+    if status==False:
+        res+=resf
+    return res
+
+arr=[4,5,6,7,8,9,12]
+print(func(arr))
+
+op--[4 5 6 7 8]=9
+    [4,5,6,7,8,9,12]=21
+    [4,5,6,7,8,9]=9
+***************************************************************************
+Efficient way:
+
+def func(arr):
+    status=True
+    res=0
+    for i in arr:
+        while status:
+            if i!=6:
+                res+=i;
+                break
+            else:
+                status=False
+        while not status:
+            if i!=9:
+                break
+            else:
+                status=True
+    return res
+
+arr=[4,5,6,7,8]
+print(func(arr))
