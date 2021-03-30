@@ -1,0 +1,12 @@
+def func(arr):
+    code=[0,0,7]
+    for i in arr:
+        if i==code[0]:
+            code.pop(0)
+    return len(code)==0
+
+arr=[1,7,2,4,50,0,6,0]   
+print(func(arr))
+
+op--[1,7,2,4,50,0,6,0]-false
+    [1,0,2,4,50,0,6,7]-true
