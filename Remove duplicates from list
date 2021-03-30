@@ -1,0 +1,9 @@
+def rem_dup(arr):
+    uniq=[]
+    for i in arr:
+        if i not in uniq:
+            uniq.append(i)
+    return uniq
+
+arr=[5,2,1,2,3,4,5]
+print(rem_dup(arr))
