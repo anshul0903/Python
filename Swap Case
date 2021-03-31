@@ -1,0 +1,25 @@
+def swap_case(s):
+    res=''
+    for i in s:
+        if i.islower():
+            res+=i.upper()
+        else:
+            res+=i.lower()
+    return res
+   
+s = input()
+result = swap_case(s)
+print(result)
+
+or
+
+
+def swap_case(s):
+    return s.swapcase()
+   
+s = input()
+result = swap_case(s)
+print(result)
+
+I/P:HackerRank.com presents "Pythonist 2".
+O/p:hACKERrANK.COM PRESENTS "pYTHONIST 2".
