@@ -20,3 +20,32 @@ if __name__ == '__main__':
     2 6 5 6
     output
     5
+    
+    ANOTHER APPROACH
+    
+    
+    if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+    arr=list(arr)
+    x=max(arr)
+    uniq=[]
+    for i in arr:
+        if i not in uniq:
+            uniq.append(i)
+    uniq.remove(x)
+    print(max(uniq))
+    
+    
+    Traditional Approach
+    
+    if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+    arr=list(arr)
+    x=max(arr)
+    res= -101
+    for i in arr:
+        if res<x and res<=i and i!=x:
+            res=i
+    print(res)
