@@ -1,0 +1,21 @@
+if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+    arr=list(arr)
+    res=set()
+    for i in arr:
+        res.add(i)
+    res=list(res)
+    res.sort()
+    print(res[-2])
+    
+    sort()--sorts the value
+    set()--sorts and no dup allowed
+    to initialize empty set-- empty_set=set()
+    
+    
+    input
+    4
+    2 6 5 6
+    output
+    5
