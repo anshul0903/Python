@@ -38,3 +38,29 @@ if __name__ == '__main__':
     # print(arr)
     
     lambda is a function
+    
+    
+    Traditional Approach
+    
+    if __name__ == '__main__':
+    students=[]
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        students.append([name,score])
+    
+    min_term = 101
+    for i in range(len(students)):
+        if min_term>float(students[i][1]):
+            min_term=float(students[i][1])
+    
+    second_min=101
+    for i in range(len(students)):
+        if float(students[i][1])>float(min_term) and second_min>float(students[i][1]):
+            second_min=float(students[i][1])
+    
+    res=[]
+    for a,b in students:
+        if b==second_min:
+            res.append(a)
+    print('\n'.join(sorted(res)))
