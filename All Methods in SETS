@@ -1,0 +1,40 @@
+Union:
+m=int(input())
+english=set(map(int,input().split()))
+n=int(input())
+french=set(map(int,input().split()))
+print(len(english.union(french)))     # or print(len(english | french))
+
+Input:
+9
+1 2 3 4 5 6 7 8 9
+9
+10 1 2 3 11 21 55 6 8
+
+Output:
+13
+
+Intersections:
+
+m=int(input())
+english=set(map(int,input().split()))
+n=int(input())
+french=set(map(int,input().split()))
+print(len(english & french))            # or print(len(english.intersection(french)))
+
+Difference:
+
+m=int(input())
+english=set(map(int,input().split()))
+n=int(input())
+french=set(map(int,input().split()))
+print(len(english - french))          # or print(len(english.difference(french)))
+
+Symmetric_diiference
+Output total number of students who have subscriptions to the English or the French newspaper but not both.
+
+m=int(input())
+english=set(map(int,input().split()))
+n=int(input())
+french=set(map(int,input().split()))
+print(len(english ^ french))        # or print(len(english.symmetric_difference(french)))
