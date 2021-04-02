@@ -12,3 +12,11 @@ Input:
 
 Output:
 13
+
+Intersections:
+
+m=int(input())
+english=set(map(int,input().split()))
+n=int(input())
+french=set(map(int,input().split()))
+print(len(english & french))            # or print(len(english.intersection(french)))
