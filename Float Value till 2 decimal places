@@ -2,9 +2,9 @@ if __name__ == '__main__':
     n = int(input())
     student_marks = {}
     for _ in range(n):
-        name, *line = input().split()
-        scores = list(map(float, line))
-        student_marks[name] = scores
+        name, *line = input().split()     # Here *line is used to have the content all remaining elements in *line, after using split(), so here the first input would be stored
+        scores = list(map(float, line))   # in name and rest all inputs would be stored in line.
+        student_marks[name] = scores      # for more details rrefer https://stackoverflow.com/questions/56658837/how-does-name-line-input-split-work-in-python-3
     query_name = input()
     arr=student_marks[query_name]
     avg=0
