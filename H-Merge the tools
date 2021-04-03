@@ -1,0 +1,36 @@
+def merge_the_tools(string, k):
+    length=int((len(string))/k)
+    arr=[]
+    i=0
+    while i<len(string):
+        arr.append(string[i:i+k])
+        i=i+k
+    res=''
+    for i in arr:
+        res=i
+        uniq=''
+        for j in res:
+            if j not in uniq:
+                uniq+=j
+        print(uniq)
+    return
+        
+
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
+    
+    
+    Problem Statemnet:
+    INPUT:
+    AABCAAADA
+    3
+    OUTPUT:
+    AB
+    CA
+    AD
+    
+    here are three substrings of length  to consider: 'AAA', 'BCA' and 'DDE'. The first substring is all 'A' characters, so A . 
+    The second substring has all distinct characters, so BCA . The third substring has  different characters, so DE . 
+    Note that a subsequence maintains the original order of characters encountered. The order of characters in each subsequence shown is important.
+    
