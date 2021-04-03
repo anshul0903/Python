@@ -1,5 +1,4 @@
 def merge_the_tools(string, k):
-    length=int((len(string))/k)
     arr=[]
     i=0
     while i<len(string):
@@ -17,6 +16,22 @@ def merge_the_tools(string, k):
         
 
 if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
+    
+    SIMPLER APPROACH:
+    
+    def merge_the_tools(string, k):
+    for i in range(0,len(string),k):
+        res=string[i:i+k]
+        uniq=''
+        for j in res:
+            if j not in uniq:
+                uniq+=j
+        print(uniq)
+    return
+    
+    if __name__ == '__main__':
     string, k = input(), int(input())
     merge_the_tools(string, k)
     
