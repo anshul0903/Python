@@ -1,0 +1,15 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n=int(input())
+arr=input().split()
+print(all(int(i)>=0 for i in arr) and any(i==i[::-1] for i in arr))
+
+Statement:
+You are given a space separated list of integers. If all the integers are positive, then you need to check if any integer is a palindromic integer.
+
+In:
+5
+12 9 61 5 14 
+
+Op:
+True
+since here 5 is pallandromic.
