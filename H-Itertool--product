@@ -3,7 +3,7 @@ from itertools import product
 
 a=list(map(int,input().split()))
 b=list(map(int,input().split()))
-print(*product(a,b))
+print(*product(a,b))              #  * means to unpack the tuple or list in print statemnet, it is called  splat , suppose for this a=[1,2,3] it prints 1 2 3 with print(*a)
 
 A = [1, 2]
 B = [3, 4]
