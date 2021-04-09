@@ -1,0 +1,21 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import permutations
+arr,k=input().split()
+print(*[''.join(j) for j in permutations(sorted(arr),int(k))],sep='\n')
+
+Input:
+HACK 2
+
+Output:
+AC
+AH
+AK
+CA
+CH
+CK
+HA
+HC
+HK
+KA
+KC
+KH
