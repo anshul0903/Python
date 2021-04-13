@@ -1,0 +1,70 @@
+Input:
+3
+11 2 4
+4 5 6
+10 8 -12
+
+Output:
+15
+
+Explanation:
+The primary diagonal is:
+11
+   5
+     -12
+Sum across the primary diagonal: 11 + 5 - 12 = 4
+The secondary diagonal is:
+     4
+   5
+10
+Sum across the secondary diagonal: 4 + 5 + 10 = 19
+Difference: |4 - 19| = 15
+Note: |x| is the absolute value of x
+
+Answer:
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'diagonalDifference' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts 2D_INTEGER_ARRAY arr as parameter.
+#
+
+def diagonalDifference(arr):
+    res1=[]
+    j=0
+    for i in range(len(arr)):
+        res1+=[arr[i][j]]
+        j+=1
+    res2=[]
+    k=0
+    for a in reversed(range(len(arr))):
+        res2+=[arr[a][k]]
+        k+=1
+    res1=sum(res1)
+    res2=sum(res2)
+    return abs(res1-res2)
+        
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = []
+
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    result = diagonalDifference(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
