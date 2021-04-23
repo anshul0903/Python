@@ -1,0 +1,42 @@
+import math
+def maxmin(arr,i,j):
+    if i==j:                                                  #VERIFY IF PROBLEM IS SMALL AND ITS RESULTS
+        max=min=arr[i]
+        return (max,min)
+    if i==j-1:
+        if(arr[i]>arr[j]):
+            max=arr[i]
+            min=arr[j]
+        else:
+            max=arr[j]
+            min=arr[i]
+        return (max,min)
+    else:
+        mid=math.floor((i+j)/2)                               #DIVIDE
+        max1,min1=maxmin(arr,i,mid)                           #CONQUER
+        max2,min2=maxmin(arr,mid+1,j)
+        if max1>max2:                                         #COMBINE
+            max=max1
+        else:
+            max=max2
+        if min1>min2:
+            min=min2
+        else:
+            min=min1
+        return (max,min)
+        
+        
+arr=list(map(int,input().split()))
+i=0
+j=len(arr)-1
+print(*(list(maxmin(arr,i,j))))       #if used print(maxmin(arr,i,j)) also fines it prints as (75, 12)
+
+
+Input:
+50 70 60 45 35 25 75 12
+Output:
+75 12
+
+
+TIME COMPLEXITY:
+T(n)=theta(n)                    #proof in notes
