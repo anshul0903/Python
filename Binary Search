@@ -1,0 +1,26 @@
+def binsearch(arr,i,n,x):
+    if i==n:
+        if arr[i]==x:
+            return i+1
+        else:
+            return 'No'
+    else:
+        mid=(i+n)//2
+        if arr[mid]==x:
+            return mid+1
+        elif x>arr[mid]:
+            return binsearch(arr,mid+1,n,x)
+        elif x<arr[mid]:
+            return binsearch(arr,i,mid-1,x)
+
+
+arr=[int(i) for i in input().split()]
+x=int(input())
+print(binsearch(arr,0,len(arr),x))
+
+
+Input:
+20 30 40 50 60
+20
+Output:
+1
