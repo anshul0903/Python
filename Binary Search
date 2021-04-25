@@ -16,7 +16,7 @@ def binsearch(arr,i,n,x):
 
 arr=[int(i) for i in input().split()]
 x=int(input())
-print(binsearch(arr,0,len(arr),x))
+print(binsearch(arr,0,len(arr)-1,x))
 
 
 Input:
