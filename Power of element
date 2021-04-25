@@ -1,0 +1,19 @@
+import math
+def power(a,n):
+    if n==1:
+        return a
+    else:
+        mid = n//2            # mid=math.floor(n/2)
+        res=power(a,mid)
+        if n%2==0:
+            return res*res
+        else:
+            return a*res*res
+
+
+a,n = map(int, input().split())
+print(power(a,n))
+
+In/Op:
+2 10
+1024
