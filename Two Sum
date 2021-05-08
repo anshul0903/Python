@@ -22,3 +22,9 @@ class Solution:
             seen[rem]=i
         return []
         
+
+Observation:
+We tried using greedy technique but failed, why? because here it would be applicable only when the array is sorted, now if we go to sort the array, we would loose
+its earlier positions, and the answer would show wrong,
+therefore, we would also need to store the earlier positions which would take more more space and time so the hashing technique is preffered over here, which has 
+T(n)=O(1) and space complexity as O(n)
