@@ -11,3 +11,34 @@ class Solution:
             return "".join(arr)
         return back(s)==back(t)
                     
+Optimal Soln:
+two pointers:
+
+class Solution:
+    def backspaceCompare(self, s: str, t: str) -> bool:
+        i, j = len(s)-1, len(t)-1
+        while i or j:
+            if s[i]=='#' or t[j]=='#':
+                if s[i]=='#':
+                    back=2
+                    while back>0:
+                        back-=1
+                        i-=1
+                        if s[i]=='#':
+                            back+=2
+                if t[j]=='#':
+                    back=2
+                    while back>0:
+                        back-=1
+                        j-=1
+                        if t[j]=='#':
+                            back+=2
+            else:
+                if s[i]!=t[j]:
+                    return False
+                else:
+                    i-=1
+                    j-=1
+        return True
+        
+     Note: This doesnt work exactly in python we get index out of range error, but the algorithm approach is correct
