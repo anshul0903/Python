@@ -2,8 +2,9 @@ def is_pal(s,start,last):
     while(start<last):
         if s[start]!=s[last]:
             return False
-        start+=1
-        last-=1
+        else:
+            start+=1
+            last-=1
     return True
     
 def validPalindrome(s):
@@ -12,8 +13,9 @@ def validPalindrome(s):
     while(start<last):
         if s[start]!= s[last]:
             return (is_pal(s,start+1,last) or is_pal(s,start,last-1))
-        start+=1
-        last-=1
+        else:
+            start+=1
+            last-=1
     return True
         
 s=input()
