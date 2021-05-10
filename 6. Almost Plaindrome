@@ -1,0 +1,20 @@
+def is_pal(s,start,last):
+    while(start<last):
+        if s[start]!=s[last]:
+            return False
+        start+=1
+        last-=1
+    return True
+    
+def validPalindrome(s):
+    start=0
+    last=len(s)-1
+    while(start<last):
+        if s[start]!= s[last]:
+            return (is_pal(s,start+1,last) or is_pal(s,start,last-1))
+        start+=1
+        last-=1
+    return True
+        
+s=input()
+print(validPalindrome(s))
