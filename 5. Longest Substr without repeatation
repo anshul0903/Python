@@ -16,4 +16,16 @@ class Solution:
         return max_count
     ------------------------------------------------------------------------------------------
     Optimal Soln:
-    
+    class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        max_count=0
+        dic={}
+        res=0
+        i=0
+        for j in range(len(s)):
+            if s[j] in dic:
+                i= max(dic[s[j]],i)
+            
+            res=max(res, j-i+1)
+            dic[s[j]]=j+1
+        return res
