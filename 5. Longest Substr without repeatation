@@ -1,4 +1,4 @@
-Brute Force Method:
+Brute Force Method: ---O(n2)
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         max_count=0
@@ -15,10 +15,9 @@ class Solution:
                 max_count=count
         return max_count
     ------------------------------------------------------------------------------------------
-    Optimal Soln:
+    Optimal Soln: ---O(n)
     class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        max_count=0
         dic={}
         res=0
         i=0
