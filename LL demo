@@ -1,0 +1,14 @@
+class node:
+    
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+    
+    def insert(value):
+        new_node=node()
+        if start==None:
+            start.data=value
+            start.next=None
+            new_node=start
+        while
+        
