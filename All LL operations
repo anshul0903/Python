@@ -1,0 +1,101 @@
+class node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+    
+def insert(start,value):
+    new_node=node(value)
+    if start==None:
+        start=new_node
+    else:
+        ptr=start
+        while(ptr.next!=None):
+            ptr=ptr.next
+        ptr.next=new_node
+        new_node.next=None
+    return start
+    
+def insertatbeg(start,value):
+    new_node=node(value)
+    if start==None:
+        start=new_node
+    else:
+        new_node.next=start
+        start=new_node
+    return start
+    
+def insertatmid(start,pos_val,value):
+    new_node=node(value)
+    if start==None:
+        start=new_node
+    else:
+        ptr=start
+        while ptr.data!=pos_val:
+            ptr=ptr.next
+        new_node.next=ptr.next.next
+        ptr.next=new_node
+    return start
+    
+def replace(start,pos_val,value):
+    new_node=node(value)
+    if start==None:
+        start=new_node
+    else:
+        ptr=start
+        while ptr.next.data!=pos_val:
+            ptr=ptr.next
+        new_node.next=ptr.next.next
+        ptr.next=new_node
+    return start
+    
+    
+def insertatend(start,value):
+    new_node=node(value)
+    if start==None:
+        start=new_node
+    else:
+        ptr=start
+        while ptr.next!=None:
+            ptr=ptr.next
+        ptr.next=new_node
+    return start
+    
+def delete(start,pos_val):
+    if start==None:
+        return
+    else:
+        ptr=start
+        while ptr.next.data!=pos_val:
+            ptr=ptr.next
+        ptr.next=ptr.next.next
+        return start
+
+def deleteatbeg(start):
+    ptr=start.next
+    start=ptr
+    return start
+        
+def display(start):
+    while start.next!=None:
+        print(start.data,end="->")
+        start=start.next
+    print(start.data)
+
+start=None
+arr=list(map(int,input().split()))
+for i in arr:
+    start=insert(start,i)
+display(start)
+x = int(input())
+start=insertatbeg(start,x)
+display(start)
+y = int(input())
+start=insertatend(start,y)
+display(start)
+a,b = map(int,input().split())
+start=replace(start,a,b)
+display(start)
+start=delete(start,b)
+display(start)
+start=deleteatbeg(start)
+display(start)
