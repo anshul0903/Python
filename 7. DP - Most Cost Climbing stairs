@@ -1,0 +1,16 @@
+def minCostClimbingStairs(self, cost: List[int]) -> int:
+        n=len(cost)-1
+        dp=[0]*n
+        return 0+min(minCost(dp,n-1,cost)+minCost(dp,n-2,cost))
+    
+    def minCost(dp,i,cost):
+        if cost(i)<=0:
+            return 0
+        if cost(i)==1:
+            return 1
+        else:
+            if dp[i]!=0:
+                return dp[i]
+            else:
+                dp[i]=cost[i]+min(minCost(dp,i-1,cost),minCost(dp,i-2,cost))
+                return dp[i]
