@@ -1,0 +1,14 @@
+class Solution:
+    def minDeletions(self, s: str) -> int:
+        arr=[]
+        count=0
+        res=list(sorted(Counter(s).items(), key=lambda item: item[1], reverse = True))
+        for (i,j) in res:
+            while j>=0:
+                if j in arr and j!=0:
+                    j-=1
+                    count+=1
+                else:
+                    break
+            arr.append(j)
+        return count
