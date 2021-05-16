@@ -1,0 +1,13 @@
+def move(m,n,dic={}):
+    key=f'{m},{n}'
+    if key in dic:
+        return dic[key]
+    if m==1 and n==1:
+        return 1
+    if m==0 or n==0:
+        return 0
+    dic[key]=move(m-1,n,dic)+move(m,n-1,dic)
+    return dic[key]
+    
+    
+print(move(3,3))
