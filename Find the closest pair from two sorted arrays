@@ -1,0 +1,24 @@
+import sys
+def close(arr1,arr2,sum):
+    m=len(arr1)-1
+    n=len(arr2)-1
+    l=0
+    r=n
+    diff=sys.maxsize
+    dic={}
+    while l<=m and r>=0:
+        res=abs(arr1[l]+arr2[r]-sum)
+        if res<diff:
+            dic[res]=[arr1[l],arr2[r]]
+            diff=res
+        if arr1[l]+arr2[r]<sum:
+            l+=1
+        else:
+            r-=1
+    return dic[res]
+
+
+arr1=list(map(int,input().split()))
+arr2=list(map(int,input().split()))
+sum=int(input())
+print(close(arr1,arr2,sum))
