@@ -1,0 +1,40 @@
+//Head Recursion
+
+def fact(n):
+    if n==1:
+        return 1
+    return n*fact(n-1)
+
+    
+fact(4,1)
+
+Here all functions in call stack are dependent on each other, and it takes n push and n pop operations for the function call stack.
+ex: push: 4*fact(3)
+    push: 3*fact(2)
+    push: 2*fact(1)
+    return 1
+    return 2
+    return 6
+    return 24
+
+//Tail Recursion
+
+def fact(n,res=1):
+    if n==1:
+        print(res)
+        return
+    fact(n-1,n*res)
+    
+fact(4)
+
+
+Here as we are storing result simultaneously, we need not return each func call, just call them and by the time we enter the base case we would be having res
+and also note we need not return fun call and they are just called and by the end of fun they would be automaticlly poped out from the func stack
+
+ex:
+    push: fact(4,1)
+    push: fact(3,4)
+    push: fact(2,12)
+    push: fact(1,24)
+    return 
+ So here less opertaions compared to the Head Recursion
