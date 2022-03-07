@@ -39,3 +39,42 @@ for i in arr:
     llist.insert(i)
 # Node.display(node)
 llist.display()
+ 
+ or more effeicently
+ 
+ class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+        
+class Slinkedlist:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+    
+    def insert(self,value):
+        new_node=Node(value)
+        if self.head == None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            ptr= self.tail
+            ptr.next = new_node
+            new_node.next = None
+            self.tail = new_node
+        return new_node
+            
+    def display(self):
+        node = self.head
+        while node.next!=None:
+            print(node.data,end="->")
+            node=node.next
+        print(node.data)
+
+
+llist = Slinkedlist()
+arr=list(map(int,input().split()))
+for i in arr:
+    llist.insert(i)
+# Node.display(node)
+llist.display()
