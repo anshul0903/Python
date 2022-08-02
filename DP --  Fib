@@ -1,16 +1,17 @@
 Top down approach
-def fib(n,value):
-	if n == 0:
-	    value[n]=1
-	elif n==1:
-	    value[n]=1
-	if not n in value:
-	    value[n] = fib(n-1,value)+fib(n-2,value)
-	return value[n]
-	
-value= {}
-fib(10,value)
-print(value)
+def fib(n):
+    if n in [1,2]:
+        res[n] = 1
+        return 1
+    if n in res:
+        return res[n]
+    else:
+        res[n] = fib(n-1)+fib(n-2)
+        return res[n]
+
+res = {}  
+fib(10)
+print(list((res.values())))
 
 Bottom Up approach
 def tabfib(n,tab=[]):
