@@ -1,0 +1,39 @@
+class Queue:
+    def __init__(self):
+        self.stack1 = []
+        self.stack2 = []
+        
+    def enQueue(self,x):
+        while len(self.stack1)!=0:
+            self.stack2.append(self.stack1.pop())
+        
+        self.stack1.append(x)
+        
+        while len(self.stack2)!=0:
+            self.stack1.append(self.stack2.pop())
+        return x
+            
+    def deQueue(self):
+        if len(self.stack1)==0:
+            return "Empty Orginal Stack"
+        x = self.stack1[-1]
+        self.stack1.pop()
+        return x
+        
+if __name__ == '__main__':
+    q = Queue()
+    q.enQueue(1)
+    q.enQueue(2)
+    q.enQueue(3)
+ 
+    print(q.deQueue())
+    print(q.deQueue())
+    print(q.deQueue())
+    
+    Time Complexity: 
+Push operation: O(N). 
+In the worst case we have empty whole of stack 1 into stack 2.
+Pop operation: O(1). 
+Same as pop operation in stack.
+Auxiliary Space: O(N). 
+Use of stack for storing values.
